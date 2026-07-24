@@ -64,12 +64,12 @@ fs.write_file("/data/file.bin", b"payload", write_type=WriteType.CacheThrough)
 
 The master connection pool spreads concurrent metadata RPCs across multiple HTTP/2 channels. Default size is **1** (single channel, backward-compatible) with **round-robin** scheduling. Raise to 4-8 with P2C scheduling for high-concurrency remote scenarios.
 
-```python
+```bash
 # Via env
-# export GOOSEFS_MASTER_CONNECTION_POOL_SIZE=8
-# export GOOSEFS_MASTER_POOL_SCHEDULE=p2c
+export GOOSEFS_MASTER_CONNECTION_POOL_SIZE=8
+export GOOSEFS_MASTER_POOL_SCHEDULE=p2c
 
-# Via properties file
+# Via properties file (goosefs-site.properties)
 # goosefs.user.master.connection.pool.size=8
 # goosefs.user.master.pool.schedule=p2c
 

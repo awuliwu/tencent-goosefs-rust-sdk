@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Batch APIs
 
-The Python binding provides nine batch APIs that fan out multiple RPCs with **bounded concurrency** (at most `MAX_BATCH_RPC_IN_FLIGHT = 64` in flight). Each batch completes in a **single PyO3 boundary crossing**, eliminating per-call GIL acquisition and making them dramatically faster than N individual calls under GIL contention.
+The Python binding provides nine batch APIs that fan out multiple RPCs with **bounded concurrency** (at most 64 in flight). Each batch completes in a **single PyO3 boundary crossing**, eliminating per-call GIL acquisition.
 
 ## When to Use Batch APIs
 
